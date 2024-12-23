@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\MMProject",
-    "\\MMProject\\Controllers"
+    "\\MMProject\\Controllers",
+    "\\MMProject\\Views",
+    "\\MMProject\\Views\\Fund"
   ],
-  "SelectedNode": "\\MMProject\\Controllers\\FundController.cs",
+  "SelectedNode": "\\MMProject\\Views\\Fund\\Edit.cshtml",
   "PreviewInSolutionExplorer": false
 }

@@ -8,18 +8,32 @@
 
 <h2>รายการออมเงิน</h2>
 
-@if(Model.Count()>0){
-    @foreach (var saving in Model)
-    {
-        <div>@saving.Id</div>
-        <div>@saving.Date</div>
-        <div>@saving.Wealt</div>
-        <a class="btn btn-warning" asp-controller="Fund" asp-action="Edit" asp-route-id="@saving.Id">แก้ไข</a>
-        <a class="btn btn-danger" asp-controller="Fund" asp-action="Delete" asp-route-id="@saving.Id" onclick="return confirm('คุณต้องการลบ รายการ @saving.Id หรือไม่?')">ลบรายการ</a>
+@try {
 
-        <hr />
+    @if (Model.Count() > 0)
+    {
+        @foreach (var saving in Model)
+        {
+            <div>@saving.Id</div>
+            <div>@saving.Date</div>
+            <div>@saving.Wealt</div>
+            <a class="btn btn-warning" asp-controller="Fund" asp-action="Edit" asp-route-id="@saving.Id">แก้ไข</a>
+            <a class="btn btn-danger" asp-controller="Fund" asp-action="Delete" asp-route-id="@saving.Id" onclick="return confirm('คุณต้องการลบ รายการ @saving.Id หรือไม่?')">ลบรายการ</a>
+
+            <hr />
+        }
     }
-}else{
-    <div>ไม่มีข้อมูล</div>
+    else
+    {
+        <div>ไม่มีข้อมูล</div>
+    }
+    <div> <a class="btn btn-primary" asp-controller="Fund" asp-action="Create">เพิ่มข้อมูล</a> </div>
+
 }
-<div> <a class="btn btn-primary" asp-controller="Fund" asp-action="Create">เพิ่มข้อมูล</a> </div>
+catch (Exception)
+{
+    <h1> not Error(Test by no SQL) </h1>
+}
+
+
+

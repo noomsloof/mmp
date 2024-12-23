@@ -7679,11 +7679,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\MMProject.csproj",
+      "projectUniqueName": "D:\\mmp\\mmp\\MMProject\\MMProject.csproj",
       "projectName": "MMProject",
-      "projectPath": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\MMProject.csproj",
+      "projectPath": "D:\\mmp\\mmp\\MMProject\\MMProject.csproj",
       "packagesPath": "C:\\Users\\thebe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\obj\\",
+      "outputPath": "D:\\mmp\\mmp\\MMProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7698,6 +7698,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

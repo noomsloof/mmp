@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MMProject.Models;
 using MMProject.Data;
+using System.Linq;
 
 namespace MMProject.Controllers
 {
@@ -14,6 +15,7 @@ namespace MMProject.Controllers
         public IActionResult Index()
         {
             IEnumerable<Saving> allSaving = _db.Savings;
+
             return View(allSaving);
         }
 
@@ -25,6 +27,12 @@ namespace MMProject.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Saving obj) {
+
+            double amount = obj.Wealt;
+            var lastReccord = _db.Savings.OrderByDescending(r => r.Id).FirstOrDefault();
+            double newWealt = lastReccord.Wealt + amount;
+
+            obj.Wealt = newWealt;
 
             if (ModelState.IsValid)
             {
