@@ -15,7 +15,6 @@ namespace MMProject.Controllers
         public IActionResult Index()
         {
             IEnumerable<Saving> allSaving = _db.Savings;
-
             return View(allSaving);
         }
 
@@ -29,17 +28,32 @@ namespace MMProject.Controllers
         public IActionResult Create(Saving obj) {
 
             double amount = obj.Wealt;
+
             var lastReccord = _db.Savings.OrderByDescending(r => r.Id).FirstOrDefault();
-            double newWealt = lastReccord.Wealt + amount;
 
-            obj.Wealt = newWealt;
-
-            if (ModelState.IsValid)
+            if (lastReccord != null)
             {
-                _db.Savings.Add(obj);
-                _db.SaveChanges();
-                return RedirectToAction("Index");
+                double newWealt = lastReccord.Wealt + amount;
+
+                obj.Wealt = newWealt;
+
+                if (ModelState.IsValid)
+                {
+                    _db.Savings.Add(obj);
+                    _db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    _db.Savings.Add(obj);
+                    _db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+
             return View(obj);
         }
 

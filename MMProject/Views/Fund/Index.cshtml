@@ -1,38 +1,78 @@
 ﻿@model IEnumerable<MMProject.Models.Saving>;
 
 @{
-    ViewData["Title"] = "Fund";
+    ViewData["Title"] = "รายการออม";
 }
 
-<h1> Funds Page </h1>
+<center><a class="btn btn-primary" asp-controller="Fund" asp-action="Create">เพิ่มรายการออม</a></center>
 
-<h2>รายการออมเงิน</h2>
 
-@try {
-
-    @if (Model.Count() > 0)
-    {
-        @foreach (var saving in Model)
-        {
-            <div>@saving.Id</div>
-            <div>@saving.Date</div>
-            <div>@saving.Wealt</div>
-            <a class="btn btn-warning" asp-controller="Fund" asp-action="Edit" asp-route-id="@saving.Id">แก้ไข</a>
-            <a class="btn btn-danger" asp-controller="Fund" asp-action="Delete" asp-route-id="@saving.Id" onclick="return confirm('คุณต้องการลบ รายการ @saving.Id หรือไม่?')">ลบรายการ</a>
-
-            <hr />
-        }
-    }
-    else
-    {
-        <div>ไม่มีข้อมูล</div>
-    }
-    <div> <a class="btn btn-primary" asp-controller="Fund" asp-action="Create">เพิ่มข้อมูล</a> </div>
-
-}
-catch (Exception)
+@if (Model.Any())
 {
-    <h1> not Error(Test by no SQL) </h1>
+
+    double? previousWealt = null;
+
+    foreach(var saving in Model)
+    {
+
+        var difference = previousWealt.HasValue ? saving.Wealt - previousWealt.Value : (double?)null;
+
+        <div class="card mt-4 shadow-sm border-0">
+
+            @if (!previousWealt.HasValue)
+            {
+                <div class="card-header bg-primary text-white" style="display: flex; justify-content: space-between;">
+                    <h5 class="mb-0">วันที่: @saving.Date (#@saving.Id)</h5>
+                    <p class="card-text text-white" style="display: flex;">
+                        <strong>ฝากครั้งแรก:</strong> @saving.Wealt
+                    </p>
+                </div>
+            }
+            else if (difference > 0)
+            {
+                <div class="card-header bg-primary text-white" style="display: flex; justify-content: space-between;">
+                    <h5 class="mb-0">วันที่: @saving.Date (#@saving.Id)</h5>
+                    <p class="card-text text-white text-end">
+                        <strong>ฝาก:</strong> @Math.Abs(difference.Value)
+                    </p>
+                </div>
+            }
+            else if (difference < 0)
+            {
+                <div class="card-header bg-danger text-white" style="display: flex; justify-content: space-between;">
+                    <h5 class="mb-0">วันที่: @saving.Date (#@saving.Id)</h5>
+                    <p class="card-text text-white text-end">
+                        <strong>ถอน:</strong> @Math.Abs(difference.Value)
+                    </p>
+                </div>
+            }
+            else
+            {
+                <div class="card-header bg-primary text-white" style="display: flex; justify-content: space-between;">
+                    <h5 class="mb-0">วันที่: @saving.Date (#@saving.Id)</h5>
+                    <p class="card-text text-white text-end">
+                        ไม่มีการเปลี่ยนแปลงในรอบนี้
+                    </p>
+                </div>
+            }
+            
+            <div class="card-body">
+
+                <p class="card-title mt-3 text-muted">
+                    <div class="text-center"> 
+                        ยอดคงเหลือ
+                        <br />
+                        <h3> @saving.Wealt </h3>
+                     </div>
+                </p>
+            </div>
+            <div class="card-footer text-end bg-light">
+                <button class="btn btn-outline-primary btn-sm">ดูรายละเอียด</button>
+            </div>
+        </div>
+
+        previousWealt = saving.Wealt;
+    }
 }
 
 
