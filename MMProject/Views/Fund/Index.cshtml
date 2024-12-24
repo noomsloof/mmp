@@ -12,7 +12,7 @@
 
     double? previousWealt = null;
 
-    foreach(var saving in Model)
+    foreach (var saving in Model.Reverse())
     {
 
         var difference = previousWealt.HasValue ? saving.Wealt - previousWealt.Value : (double?)null;
