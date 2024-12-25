@@ -12,7 +12,7 @@
 
     double? previousWealt = null;
 
-    foreach (var saving in Model.Reverse())
+    foreach (var saving in Model)
     {
 
         var difference = previousWealt.HasValue ? saving.Wealt - previousWealt.Value : (double?)null;
@@ -67,7 +67,7 @@
                 </p>
             </div>
             <div class="card-footer text-end bg-light">
-                <button class="btn btn-outline-primary btn-sm">ดูรายละเอียด</button>
+                <a class="btn btn-outline-primary btn-sm" asp-controller="Fund" asp-action="Delete" asp-route-id="@saving.Id">ดูรายละเอียด</a>
             </div>
         </div>
 

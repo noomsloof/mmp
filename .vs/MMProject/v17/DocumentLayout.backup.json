@@ -3,32 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|c:\\users\\thebe\\onedrive\\desktop\\mmp\\mmp\\mmproject\\controllers\\fundcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|solutionrelative:mmproject\\controllers\\fundcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|c:\\users\\thebe\\onedrive\\desktop\\mmp\\mmp\\mmproject\\views\\calculate\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|solutionrelative:mmproject\\views\\calculate\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|c:\\users\\thebe\\onedrive\\desktop\\mmp\\mmp\\mmproject\\views\\fund\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|solutionrelative:mmproject\\views\\fund\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|c:\\users\\thebe\\onedrive\\desktop\\mmp\\mmp\\mmproject\\views\\calculate\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|solutionrelative:mmproject\\views\\calculate\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|c:\\users\\thebe\\onedrive\\desktop\\mmp\\mmp\\mmproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|solutionrelative:mmproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|c:\\users\\thebe\\onedrive\\desktop\\mmp\\mmp\\mmproject\\controllers\\calculatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|solutionrelative:mmproject\\controllers\\calculatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|c:\\users\\thebe\\onedrive\\desktop\\mmp\\mmp\\mmproject\\models\\investplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|solutionrelative:mmproject\\models\\investplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|c:\\users\\thebe\\onedrive\\desktop\\mmp\\mmp\\mmproject\\views\\fund\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|solutionrelative:mmproject\\views\\fund\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|c:\\users\\thebe\\onedrive\\desktop\\mmp\\mmp\\mmproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|solutionrelative:mmproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|c:\\users\\thebe\\onedrive\\desktop\\mmp\\mmp\\mmproject\\views\\fund\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|solutionrelative:mmproject\\views\\fund\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|c:\\users\\thebe\\onedrive\\desktop\\mmp\\mmp\\mmproject\\models\\saving.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E469E422-D448-4797-B7EC-96CD097E30B6}|MMProject\\MMProject.csproj|solutionrelative:mmproject\\models\\saving.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,92 +34,68 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Views\\Fund\\Create.cshtml",
               "RelativeDocumentMoniker": "MMProject\\Views\\Fund\\Create.cshtml",
               "ToolTip": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Views\\Fund\\Create.cshtml",
               "RelativeToolTip": "MMProject\\Views\\Fund\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-23T00:26:22.522Z",
+              "WhenOpened": "2024-12-25T01:09:22.143Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Program.cs",
-              "RelativeDocumentMoniker": "MMProject\\Program.cs",
-              "ToolTip": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Program.cs",
-              "RelativeToolTip": "MMProject\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAAAUAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "InvestPlan.cs",
+              "DocumentMoniker": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Models\\InvestPlan.cs",
+              "RelativeDocumentMoniker": "MMProject\\Models\\InvestPlan.cs",
+              "ToolTip": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Models\\InvestPlan.cs",
+              "RelativeToolTip": "MMProject\\Models\\InvestPlan.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T10:47:06.338Z",
+              "WhenOpened": "2024-12-25T01:03:08.556Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FundController.cs",
-              "DocumentMoniker": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Controllers\\FundController.cs",
-              "RelativeDocumentMoniker": "MMProject\\Controllers\\FundController.cs",
-              "ToolTip": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Controllers\\FundController.cs",
-              "RelativeToolTip": "MMProject\\Controllers\\FundController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwA8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-22T23:28:58.752Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\appsettings.json",
-              "RelativeDocumentMoniker": "MMProject\\appsettings.json",
-              "ToolTip": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\appsettings.json",
-              "RelativeToolTip": "MMProject\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-23T00:01:48.437Z",
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Views\\Calculate\\Create.cshtml",
+              "RelativeDocumentMoniker": "MMProject\\Views\\Calculate\\Create.cshtml",
+              "ToolTip": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Views\\Calculate\\Create.cshtml",
+              "RelativeToolTip": "MMProject\\Views\\Calculate\\Create.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-25T00:44:01.421Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Views\\Fund\\Index.cshtml",
-              "RelativeDocumentMoniker": "MMProject\\Views\\Fund\\Index.cshtml",
-              "ToolTip": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Views\\Fund\\Index.cshtml",
-              "RelativeToolTip": "MMProject\\Views\\Fund\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAPAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Views\\Calculate\\Index.cshtml",
+              "RelativeDocumentMoniker": "MMProject\\Views\\Calculate\\Index.cshtml",
+              "ToolTip": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Views\\Calculate\\Index.cshtml",
+              "RelativeToolTip": "MMProject\\Views\\Calculate\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-22T23:37:53.656Z",
+              "WhenOpened": "2024-12-25T00:07:19.302Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Views\\Fund\\Edit.cshtml",
-              "RelativeDocumentMoniker": "MMProject\\Views\\Fund\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Views\\Fund\\Edit.cshtml",
-              "RelativeToolTip": "MMProject\\Views\\Fund\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-23T00:50:42.676Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Saving.cs",
-              "DocumentMoniker": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Models\\Saving.cs",
-              "RelativeDocumentMoniker": "MMProject\\Models\\Saving.cs",
-              "ToolTip": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Models\\Saving.cs",
-              "RelativeToolTip": "MMProject\\Models\\Saving.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "CalculateController.cs",
+              "DocumentMoniker": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Controllers\\CalculateController.cs",
+              "RelativeDocumentMoniker": "MMProject\\Controllers\\CalculateController.cs",
+              "ToolTip": "C:\\Users\\thebe\\OneDrive\\Desktop\\mmp\\mmp\\MMProject\\Controllers\\CalculateController.cs",
+              "RelativeToolTip": "MMProject\\Controllers\\CalculateController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-22T23:20:05.211Z"
+              "WhenOpened": "2024-12-25T00:06:13.816Z",
+              "EditorCaption": ""
             }
           ]
         }

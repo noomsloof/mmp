@@ -10,5 +10,6 @@ namespace MMProject.Data
 
         }
         public DbSet<Saving> Savings { get; set; }
+        public DbSet<InvestPlan> InvestPlans { get; set; }
     }
 }

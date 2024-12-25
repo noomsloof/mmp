@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MMProject.Models;
 using MMProject.Data;
-using System.Linq;
 
 namespace MMProject.Controllers
 {

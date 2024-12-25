@@ -11,7 +11,8 @@ namespace MMProject.Models
 
         [Required]
         [DisplayName("วันที่")]
-        public string Date { get; set; }
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime Date { get; set; }
 
         [Required]
         [DisplayName("จำนวนเงิน")]
