@@ -15,7 +15,16 @@ namespace MMProject.Controllers
         public IActionResult Index()
         {
 
-            return View();
+            var viewModel = new CalIndexViewModel
+            {
+                InvestPlans = _db.InvestPlans,
+                Savings = new List<Saving>
+                {
+                    _db.Savings.OrderByDescending(r => r.Id).FirstOrDefault()
+                }
+            };
+
+            return View(viewModel);
         }
 
         public IActionResult Create()
