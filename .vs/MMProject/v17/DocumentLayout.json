@@ -30,21 +30,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "InvestPlan.cs",
-              "DocumentMoniker": "D:\\mmp\\mmp\\MMProject\\Models\\InvestPlan.cs",
-              "RelativeDocumentMoniker": "MMProject\\Models\\InvestPlan.cs",
-              "ToolTip": "D:\\mmp\\mmp\\MMProject\\Models\\InvestPlan.cs",
-              "RelativeToolTip": "MMProject\\Models\\InvestPlan.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T02:32:15.821Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -55,8 +42,7 @@
               "RelativeToolTip": "MMProject\\Models\\ViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T23:50:09.707Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-25T23:50:09.707Z"
             },
             {
               "$type": "Document",
@@ -68,8 +54,7 @@
               "RelativeToolTip": "MMProject\\Controllers\\FundController.cs",
               "ViewState": "AgIAAFQAAAAAAAAAAAAIwGAAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T23:41:35.47Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-25T23:41:35.47Z"
             },
             {
               "$type": "Document",
@@ -81,8 +66,7 @@
               "RelativeToolTip": "MMProject\\Controllers\\CalculateController.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAswEUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T00:06:13.816Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-25T00:06:13.816Z"
             },
             {
               "$type": "Document",
@@ -92,10 +76,22 @@
               "RelativeDocumentMoniker": "MMProject\\Views\\Calculate\\Index.cshtml",
               "ToolTip": "D:\\mmp\\mmp\\MMProject\\Views\\Calculate\\Index.cshtml",
               "RelativeToolTip": "MMProject\\Views\\Calculate\\Index.cshtml",
-              "ViewState": "AgIAAB8AAAAAAAAAAADwvzwAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAowHoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-25T00:07:19.302Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InvestPlan.cs",
+              "DocumentMoniker": "D:\\mmp\\mmp\\MMProject\\Models\\InvestPlan.cs",
+              "RelativeDocumentMoniker": "MMProject\\Models\\InvestPlan.cs",
+              "ToolTip": "D:\\mmp\\mmp\\MMProject\\Models\\InvestPlan.cs",
+              "RelativeToolTip": "MMProject\\Models\\InvestPlan.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T02:32:15.821Z"
             }
           ]
         }

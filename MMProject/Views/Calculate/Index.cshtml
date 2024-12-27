@@ -1,8 +1,11 @@
 ﻿@model CalIndexViewModel
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
 @{
     ViewData["Title"] = "คำนวน";
 }
+
 
 <center>
     <h1>
@@ -23,6 +26,9 @@
         {
             double YieldPerYear = plan.YieldPerYear * 100;
             double P = 0;
+            double StackP = P;
+            List<double> YearYield = new List<double>();
+            List<string> LableYield = new List<string>();
 
             foreach (var saving in Model.Savings)
             {
@@ -31,8 +37,8 @@
 
             double A = P * Math.Pow(1 + plan.YieldPerYear / 1, 1 * plan.Time);
 
-    
-    
+
+
             <div class="card" style="width: 18rem; margin: 1.5rem;">
                 <div class="card-body">
                     <h5 class="card-title">@plan.Name</h5>
@@ -55,6 +61,66 @@
                         </div>
                         <div class="modal-body">
                             ... Text here ...
+
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ปีที่</th>
+                                        <th scope="col">ยอดเงินรวม (บาท)</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    @for(int i=0; i > plan.Time; i++){
+                                        <tr>
+                                            <td>@(i+1)</td>
+                                            <td>@StackP</td>
+                                        </tr>
+
+                                        StackP += (StackP * plan.YieldPerYear);
+                                        YearYield.Add(StackP);
+                                        LableYield.Add("ปีที่ "+i+1);
+                                    } 
+
+                                </tbody>
+
+                            </table>
+
+
+                            <!-- Line Chart -->
+
+                            <div class="container">
+                                <canvas id="myChart"></canvas>
+                            </div>
+                            <script>
+                                const ctx = document.getElementById('myChart').getContext('2d');
+                                const data = @YearYield;
+                                const labels = @LableYield;
+
+                                const myChart = new Chart(ctx, {
+                                    type: 'line',
+                                    data: {
+                                        labels: labels,
+                                        datasets: [{
+                                            label: 'ยอดเงินรวม',
+                                            data: data,
+                                            borderColor: 'rgba(75, 192, 192, 1)',
+                                            tension: 0.1,
+                                        }]
+                                    },
+                                    options: {
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true
+                                            }
+                                        }
+                                    }
+                                });
+                            </script>
+
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
