@@ -17,29 +17,51 @@
 
 <center><a class="btn btn-primary" asp-controller="Calculate" asp-action="Create">เพิ่มแผน</a></center>
 
-<div style="display:flex">
-@foreach(var plan in Model.InvestPlans){
+<div class="row">
+    <div class="col">
+        @foreach (var plan in Model.InvestPlans)
+        {
+            double YieldPerYear = plan.YieldPerYear * 100;
+            double P = 0;
 
-    double YieldPerYear = plan.YieldPerYear * 100;
-    double P = 0;
+            foreach (var saving in Model.Savings)
+            {
+                P = saving.Wealt;
+            }
 
-    foreach (var saving in Model.Savings)
-    {
-        P = saving.Wealt;
-    }
+            double A = P * Math.Pow(1 + plan.YieldPerYear / 1, 1 * plan.Time);
 
-    double A = P * Math.Pow(1 + plan.YieldPerYear / 1, 1 * plan.Time);
+    
+    
+            <div class="card" style="width: 18rem; margin: 1.5rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@plan.Name</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">@plan.Description</h6>
+                    <p class="card-text"> เติบโตให้ได้ @YieldPerYear% ต่อเนื่องเป็นเวลา @plan.Time ปี ผลลัพธ์รวมดอกเบี้ยทบต้นทั้งหมดจะกลายเป็น @Math.Round(A, 2) </p>
+                    <a class="card-link" asp-controller="Calculate" asp-action="Delete" asp-route-id="@plan.Id" onclick="return confirm('คุณแน่ใจหรือไม่ว่าต้องการลบแผน @plan.Name?');">ลบแผนนี้</a>
+                    <a href="#" class="card-link data-toggle=" modal" data-target="#exampleModal">ดูรายละเอียดเพิ่มเติม</a>
+                </div>
+            </div>
 
-    <div class="card" style="width: 18rem; margin: 1.5rem;">
-        <div class="card-body">
-            <h5 class="card-title">@plan.Name</h5>
-            <h6 class="card-subtitle mb-2 text-muted">@plan.Description</h6>
-            <p class="card-text"> เติบโตให้ได้ @YieldPerYear% ต่อเนื่องเป็นเวลา @plan.Time ปี ผลลัพธ์รวมดอกเบี้ยทบต้นทั้งหมดจะกลายเป็น @Math.Round(A, 2) </p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-        </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">@plan.Name</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            ... Text here ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
-}
 </div>
-
-

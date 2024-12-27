@@ -48,5 +48,25 @@ namespace MMProject.Controllers
             }
             return View(obj);
         }
+
+        public IActionResult Delete(int? Id)
+        {
+            if (Id is null || Id is 0)
+            {
+                return NotFound();
+            }
+
+            var obj = _db.InvestPlans.Find(Id);
+
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            _db.InvestPlans.Remove(obj);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
     }
 }

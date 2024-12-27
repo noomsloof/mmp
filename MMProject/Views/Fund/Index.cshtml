@@ -67,7 +67,7 @@
                 </p>
             </div>
             <div class="card-footer text-end bg-light">
-                <a class="btn btn-outline-primary btn-sm" asp-controller="Fund" asp-action="Delete" asp-route-id="@saving.Id">ดูรายละเอียด</a>
+                <a class="btn btn-outline-primary btn-sm" asp-controller="Fund" asp-action="Delete" asp-route-id="@saving.Id" onclick="return confirm('คุณแน่ใจหรือไม่ว่าต้องการลบ @saving.Id');">ลบ ห้ามลบ ลบไม่ได้ ไม่ควรลบ เดี๋ยวเอาออกทีหลัง</a>
             </div>
         </div>
 
