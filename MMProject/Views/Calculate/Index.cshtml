@@ -1,7 +1,6 @@
 ﻿@model CalIndexViewModel
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-
 @{
     ViewData["Title"] = "คำนวน";
 }
@@ -16,20 +15,12 @@
     </h1>
 </center> 
 
-
-
 <center><a class="btn btn-primary" asp-controller="Calculate" asp-action="Create">เพิ่มแผน</a></center>
 
-<div class="row">
-    <div class="col">
         @foreach (var plan in Model.InvestPlans)
         {
             double YieldPerYear = plan.YieldPerYear * 100;
             double P = 0;
-            double StackP = P;
-            List<double> YearYield = new List<double>();
-            List<string> LableYield = new List<string>();
-
             foreach (var saving in Model.Savings)
             {
                 P = saving.Wealt;
@@ -37,97 +28,110 @@
 
             double A = P * Math.Pow(1 + plan.YieldPerYear / 1, 1 * plan.Time);
 
-
-
             <div class="card" style="width: 18rem; margin: 1.5rem;">
                 <div class="card-body">
+                    @(plan.Id)
                     <h5 class="card-title">@plan.Name</h5>
                     <h6 class="card-subtitle mb-2 text-muted">@plan.Description</h6>
-                    <p class="card-text"> เติบโตให้ได้ @YieldPerYear% ต่อเนื่องเป็นเวลา @plan.Time ปี ผลลัพธ์รวมดอกเบี้ยทบต้นทั้งหมดจะกลายเป็น @Math.Round(A, 2) </p>
+                    <p class="card-text"> เติบโตให้ได้ @YieldPerYear% ต่อเนื่องเป็นเวลา @plan.Time ปี ผลลัพธ์รวมดอกเบี้ยทบต้นทั้งหมดจะกลายเป็น @Math.Round(A, 2).ToString("N2") บาท </p>
                     <a class="card-link" asp-controller="Calculate" asp-action="Delete" asp-route-id="@plan.Id" onclick="return confirm('คุณแน่ใจหรือไม่ว่าต้องการลบแผน @plan.Name?');">ลบแผนนี้</a>
-                    <a href="#" class="card-link data-toggle=" modal" data-target="#exampleModal">ดูรายละเอียดเพิ่มเติม</a>
+                    <a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal@(plan.Id)">
+                        ดูรายละเอียดเพิ่มเติม
+                    </a>
                 </div>
             </div>
 
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">@plan.Name</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            ... Text here ...
-
-
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">ปีที่</th>
-                                        <th scope="col">ยอดเงินรวม (บาท)</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-
-                                    @for(int i=0; i > plan.Time; i++){
-                                        <tr>
-                                            <td>@(i+1)</td>
-                                            <td>@StackP</td>
-                                        </tr>
-
-                                        StackP += (StackP * plan.YieldPerYear);
-                                        YearYield.Add(StackP);
-                                        LableYield.Add("ปีที่ "+i+1);
-                                    } 
-
-                                </tbody>
-
-                            </table>
-
-
-                            <!-- Line Chart -->
-
-                            <div class="container">
-                                <canvas id="myChart"></canvas>
-                            </div>
-                            <script>
-                                const ctx = document.getElementById('myChart').getContext('2d');
-                                const data = @YearYield;
-                                const labels = @LableYield;
-
-                                const myChart = new Chart(ctx, {
-                                    type: 'line',
-                                    data: {
-                                        labels: labels,
-                                        datasets: [{
-                                            label: 'ยอดเงินรวม',
-                                            data: data,
-                                            borderColor: 'rgba(75, 192, 192, 1)',
-                                            tension: 0.1,
-                                        }]
-                                    },
-                                    options: {
-                                        scales: {
-                                            y: {
-                                                beginAtZero: true
-                                            }
-                                        }
-                                    }
-                                });
-                            </script>
-
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         }
+
+@foreach(var modal in Model.InvestPlans){
+
+    double YieldPerYear = modal.YieldPerYear * 100;
+    double P = 0;
+    
+    List<double> YearYield = new List<double>();
+    List<string> LableYield = new List<string>();
+    foreach (var saving in Model.Savings){P = saving.Wealt;}
+
+    double StackP = P;
+
+    <!-- Modal -->
+    <div class="modal fade modal-xl" id="myModal@(modal.Id)" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="justify-content: space-between;">
+                    <h5 class="modal-title" id="exampleModalLabel">@modal.Name</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <!-- content -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ปีที่</th>
+                                <th scope="col">ยอดเงินรวม</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @for (int i = 0; i < modal.Time; i++)
+                            {
+                                <tr>
+                                    <td>@(i + 1)</td>
+                                    <td>@Math.Round(StackP, 2).ToString("N2") บาท</td>
+                                </tr>
+
+                                StackP += (StackP * modal.YieldPerYear);
+                                YearYield.Add(StackP);
+                                LableYield.Add("ปีที่ " + i + 1);
+                            }
+
+                        </tbody>
+
+                    </table>
+
+
+                    <!-- Line Chart -->
+
+                    <div class="container">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                    <script>
+                        const ctx = document.getElementById('myChart').getContext('2d');
+                        const data = @YearYield;
+                        const labels = @LableYield;
+
+                        const myChart = new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    label: 'ยอดเงินรวม',
+                                    data: data,
+                                    borderColor: 'rgba(75, 192, 192, 1)',
+                                    tension: 0.1,
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+
+}
