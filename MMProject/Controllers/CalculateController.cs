@@ -39,8 +39,6 @@ namespace MMProject.Controllers
 
             if (ModelState.IsValid)
             {
-                double converseYield = obj.YieldPerYear / 100;
-                obj.YieldPerYear = converseYield;
                 _db.InvestPlans.Add(obj);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
@@ -67,6 +65,38 @@ namespace MMProject.Controllers
             _db.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+
+
+        public IActionResult Edit(int? Id)
+        {
+            if (Id == null || Id == 0)
+            {
+                return NotFound();
+            }
+
+            var obj = _db.InvestPlans.Find(Id);
+
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            return View(obj);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(InvestPlan obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.InvestPlans.Update(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(obj);
+
         }
     }
 }

@@ -6,21 +6,39 @@
 
 
 
-
-
 @if (Model.Savings.Any())
 {
     <center>
-        <h1>
-            เงินออมปัจจุบัน = @foreach (var saving in Model.Savings)
-            {
-                @saving?.Wealt.ToString("N2")
-            }
-        </h1>
+    <div style="width: 60%;">
+    <div class="card mt-4 shadow-sm border-0">
+        <div class="card-header bg-primary text-white" style="display: flex; justify-content: space-between;">
+            <h5 class="mb-0">
+                ข้อมูลวันที่ : @foreach (var saving in Model.Savings)
+                {
+                    @saving?.Date
+                }
+            </h5>
+        </div>
+        <div class="card-body">
+
+            <p class="card-title mt-3 text-muted">
+                <div class="text-center">
+                    เงินออมปัจจุบัน : @foreach (var saving in Model.Savings)
+                    {
+                        @saving?.Wealt.ToString("N2")
+                    }
+                </div>
+            </p>
+        </div>
+        <div class="card-footer text-end bg-light">
+            <a class="btn btn-outline-primary btn-sm" asp-controller="Fund" asp-action="Create">ออมเพิ่ม</a>
+        </div>
+    </div>
+    </div>
     </center>
 }
 
-<div class="d-flex justify-content-end">
+<div class="d-flex justify-content-end" style="margin-top: 1rem;">
 <a class="btn btn-primary" asp-controller="Calculate" asp-action="Create">+</a>
 </div>
 
@@ -29,7 +47,7 @@
     <div class="row d-flex justify-content-center align-items-center">
         @foreach (var plan in Model.InvestPlans)
         {
-            double YieldPerYear = plan.YieldPerYear * 100;
+            double YieldPerYear = plan.YieldPerYear;
             double P = 0;
 
             if(Model.Savings.Any()){
@@ -46,7 +64,7 @@
                 P = 0;
             }
 
-            double A = P * Math.Pow(1 + plan.YieldPerYear / 1, 1 * plan.Time);
+            double A = P * Math.Pow(1 + (plan.YieldPerYear/100) / 1, 1 * plan.Time);
 
             <div class="card" style="width: 18rem; margin: 1.5rem;">
                 <div class="card-body">
@@ -54,7 +72,7 @@
                     <h6 class="card-subtitle mb-2 text-muted">@plan.Description</h6>
                     <p class="card-text"> เติบโตให้ได้ @YieldPerYear% ต่อเนื่องเป็นเวลา @plan.Time ปี ผลลัพธ์รวมดอกเบี้ยทบต้นทั้งหมดจะกลายเป็น @Math.Round(A, 2).ToString("N2") บาท </p>
                     <a class="card-link" asp-controller="Calculate" asp-action="Delete" asp-route-id="@plan.Id" onclick="return confirm('คุณแน่ใจหรือไม่ว่าต้องการลบแผน @plan.Name?');">ลบแผนนี้</a>
-                    <a type="button" class="card-link" data-bs-toggle="modal" data-bs-target="#myModal@(plan.Id)">
+                    <a class="card-link" data-bs-toggle="modal" data-bs-target="#myModal@(plan.Id)">
                         ดูรายละเอียดเพิ่มเติม
                     </a>
                 </div>
@@ -91,7 +109,7 @@
 
                         <center>
                             @modal.Description
-                            <p>ระยะเวลา @modal.Time ปี ผลตอบแทน @(modal.YieldPerYear * 100)%</p>
+                            <p>ระยะเวลา @modal.Time ปี ผลตอบแทน @modal.YieldPerYear%</p>
                         </center>
 
                         <table class="table table-bordered">
@@ -104,14 +122,14 @@
 
                             <tbody>
 
-                                @for (int i = 0; i < modal.Time; i++)
+                                @for (int i = 0; i <= modal.Time; i++)
                                 {
                                     <tr>
-                                        <td>@(i + 1)</td>
+                                        <td>@(i)</td>
                                         <td>@Math.Round(StackP, 2).ToString("N2") บาท</td>
                                     </tr>
 
-                                    StackP += (StackP * modal.YieldPerYear);
+                                    StackP += (StackP * (modal.YieldPerYear/100));
                                     YearYield.Add(StackP);
                                     LableYield.Add("ปีที่ " + i + 1);
                                 }
@@ -123,7 +141,8 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <a class="btn btn-primary" asp-controller="Calculate" asp-action="Edit" asp-route-id="@modal.Id"> แก้ไข </a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
                     </div>
                 </div>
             </div>

@@ -1,41 +1,43 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome To MoneyMinder</h1>
+	<p class="lead">Your Savings & Investment Assistant</p>
 </div>
 
+<canvas id="lineChart" width="400" height="200"></canvas>
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-    google.charts.load('current', { 'packages': ['corechart'] });
-    google.charts.setOnLoadCallback(drawChart);
+<script>
+    // ข้อมูลสำหรับกราฟจาก ViewBag
+    var dates = @Html.Raw(Json.Serialize(ViewBag.Dates));
+    var values = @Html.Raw(Json.Serialize(ViewBag.Values));
 
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['รายจ่าย', 'บาท'],
-            ['เงินเดือนพนักงาน', 88780.24],
-            ['ค่าผ่อนรถ', 79080.7],
-            ['ค่าน้ำมัน', 77623.1],
-        ]);
-
-        var total = 0;
-        for (var i = 0; i < data.getNumberOfRows(); i++) {
-            total += data.getValue(i, 1); // คอลัมน์ที่ 1 เป็นค่าตัวเลข
+    // สร้างกราฟ
+    const ctx = document.getElementById('lineChart').getContext('2d');
+    const lineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: dates, // แกน X
+            datasets: [{
+                label: 'ยอดเงินออม',
+                data: values, // แกน Y
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4, // ความโค้งของเส้น
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                },
+            },
         }
-
-        document.getElementById('total').innerText = 'Total: ' + total.toLocaleString() + ' บาท';
-
-        var options = {
-            title: 'ค่าใช้จ่าย',
-            pieSliceText: 'value', // แสดงตัวเลขในแต่ละ Slice
-            legend: { position: 'labeled' } // แสดงชื่อข้างนอก Slice
-        };
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-        chart.draw(data, options);
-    }
+    });
 </script>
-<div id="piechart" style="width: 900px; height: 500px;"></div>
-<div id="total" style="font-size: 20px; margin-left: 20px; float: left; line-height: 400px; margin-top:-100px;"></div>

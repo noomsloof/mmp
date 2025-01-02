@@ -1,11 +1,13 @@
 ﻿@model InvestPlan
+
 @{
-    ViewData["Title"] = "เพิ่มแผน";
+    ViewData["Title"] = "Edit";
 }
 
-<h1 class="text-center">เพิ่มแผนการ</h1>
 
-<form method="post" asp-controller="Calculate" asp-action="Create">
+<h1 class="text-center">แก้ไขแผนการ</h1>
+
+<form method="post" asp-controller="Calculate" asp-action="Edit">
 
     <div class="form-group">
         <label asp-for="Name"></label>
@@ -27,9 +29,10 @@
 
     <div class="form-group">
         <label asp-for="YieldPerYear"></label>
-        <input type="text" asp-for="YieldPerYear" class="form-control"/>
+        <input type="text" asp-for="YieldPerYear" class="form-control" />
         <span asp-validation-for="YieldPerYear" class="text-danger"></span>
     </div>
 
-    <button style="margin-top:1rem;" type="submit" class="btn btn-primary"> เพิ่ม </button>
+    <button style="margin-top:1rem;" type="submit" class="btn btn-primary"> แก้ไข </button>
 </form>
+

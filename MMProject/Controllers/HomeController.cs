@@ -1,20 +1,29 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using MMProject.Data;
 using MMProject.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MMProject.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ApplicationDBContext _db;
+        public HomeController(ApplicationDBContext db)
         {
-            _logger = logger;
+            _db = db;
         }
 
         public IActionResult Index()
         {
+
+            var datetime = _db.Savings.Select(s => s.Date).ToList();
+            var values = _db.Savings.Select(s => s.Wealt).ToList();
+
+            ViewBag.Dates = datetime;
+            ViewBag.Values = values;
+
             return View();
         }
 
